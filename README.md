@@ -1,6 +1,3 @@
-
-![alt text](https://cloud.githubusercontent.com/assets/17525730/20768068/8abc6fba-b762-11e6-89fd-38f75012e55e.png "Screenshot")
-
 # nimbus.ai
 Nimbus.Ai is twitter sentiment analysis built in django 
 ----------
