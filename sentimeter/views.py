@@ -14,22 +14,13 @@ def analyse(request):
     if request.GET and user_input.is_valid():
         input_hastag = user_input.cleaned_data['q']
         print(input_hastag)
-        data = sentimeter.primary(input_hastag)
+        data_all = sentimeter.primary(input_hastag)
         # data = input_hastag
-        return render(request, "result.html", {'data': data})
+        data=data_all[:4]
+        data_p_n_nu=data_all[4:]
+        print("data::",data)
+        print("pop data::::::::::::::::::::::::::::::::::::::::::",data_p_n_nu)
+        return render(request, "result.html", {'data': data,'data_p_n_nu':data_p_n_nu})
     return render(request, "index.html", {'input_hastag': user_input})
 
 
-# # @api_view(["GET"])
-# def gettweets(request):
-#     tweets = []
-#     for tweet in tweepy.Cursor(api.search,q="#" + request.GET.get("text") + " -filter:retweets",rpp=5,lang="en", tweet_mode='extended').items(50):
-#         temp = {}
-#         temp["text"] = tweet.full_text
-#         temp["username"] = tweet.user.screen_name
-#         with graph.as_default():
-#             prediction = predict(tweet.full_text)
-#         temp["label"] = prediction["label"]
-#         temp["score"] = prediction["score"]
-#         tweets.append(temp)
-#     return JsonResponse({"results": tweets});
