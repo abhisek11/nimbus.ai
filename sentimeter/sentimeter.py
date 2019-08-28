@@ -63,7 +63,7 @@ def primary(input_hashtag):
     # print "Negative ",float(neg_count/N)*100,"%"
     # print "Neutral ",float(neutral_count/N)*100,"%"
     print('pos_list',len(pos_list),'nev_list',len(nev_list),'neut_list',len(neut_list))
-    print(nev_list)
+    # print(nev_list)
     return [['Sentiment', 'no. of tweets'],['Positive',pos_count]
-            ,['Neutral',neutral_count],['Negative',neg_count],['Positive_list',pos_list],
-            ['Negative_list',nev_list],['Neutral_list',neut_list]]
+            ,['Neutral',neutral_count],['Negative',neg_count],{'Positive_list':pos_list},
+            {'Negative_list':nev_list},{'Neutral_list':neut_list}]

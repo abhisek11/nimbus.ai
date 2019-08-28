@@ -18,9 +18,11 @@ def analyse(request):
         # data = input_hastag
         data=data_all[:4]
         data_p_n_nu=data_all[4:]
-        print("data::",data)
-        print("pop data::::::::::::::::::::::::::::::::::::::::::",data_p_n_nu)
-        return render(request, "result.html", {'data': data,'data_p_n_nu':data_p_n_nu})
+        data_positive=data_p_n_nu[0]['Positive_list']
+        # print("data_positive",data_positive)
+        # print("data::",data)
+        # print("pop data::::::::::::::::::::::::::::::::::::::::::",data_p_n_nu)
+        return render(request, "result.html", {'data': data,'data_p_n_nu':data_positive})
     return render(request, "index.html", {'input_hastag': user_input})
 
 
