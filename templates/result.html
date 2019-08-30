@@ -25,12 +25,40 @@
 
 {% block body %}
     <div class="row">
-        <div class="col s12 m12 l12" >
+        
+        <div class="col s4 m4 l4" >
             <div id="piechart" style="width: 463px !important;min-height: 450px;float: left !important;"></div>
-            <button type="button" class="btn btn-success" id="positive-result">Positive</button>
-            <button type="button" class="btn btn-danger" id="negative-result">Negative</button>
-            <button type="button" class="btn btn-info" id="neutral-result">Neutral</button>
-            <!-- {{data_p_n_nu}} -->
+        </div>
+
+        <div class="col s8 m12 l8 table-box" >
+            <table style="width:50%" >
+                <tr>
+                    <th><strong>Post</strong></th>
+                    <th><strong>screen_name</strong></th>
+                    <th><strong>created_at</strong></th>
+                    <th><strong>user_location</strong></th>
+                    <th><strong>user_id</strong></th>
+                    
+                </tr>
+                {% for data in data_positive %}
+                    <tr>
+                        {% for value in data %}
+                            <td>{{value}}</td>
+                        {% endfor %}
+                    </tr>
+                    
+
+                    
+
+
+                {% endfor %}
+                
+            </table>
+        </div>
+        <div class="col s12 m12 l12" >
+                <button type="button" class="btn btn-success" id="positive-result">Positive</button>
+                <button type="button" class="btn btn-danger" id="negative-result">Negative</button>
+                <button type="button" class="btn btn-info" id="neutral-result">Neutral</button>
         </div>
     </div>
 {% endblock %}

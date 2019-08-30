@@ -58,10 +58,7 @@ def primary(input_hashtag):
             pos += blob.sentiment.polarity
             pos_count += 1
             pos_list.append(tweet_data_dict)
-    # print "Total tweets",
-    # print "Positive ",float(pos_count/N)*100,"%"
-    # print "Negative ",float(neg_count/N)*100,"%"
-    # print "Neutral ",float(neutral_count/N)*100,"%"
+
     print('pos_list',len(pos_list),'nev_list',len(nev_list),'neut_list',len(neut_list))
     # print(nev_list)
     return [['Sentiment', 'no. of tweets'],['Positive',pos_count]
