@@ -30,9 +30,10 @@ def analyse(request):
         neutral_list=[[x['text'],x['screen_name'],x['created_at'],x['user_location'],x['user_id']]
          for x in data_neutral['Neutral_list'] ]
         print("data_positive",data_negative)
-
+        # image=request.build_absolute_uri('/sentimeter/static/media/abg1.png'.url)
+        # print('image',image)
         return render(request, "result.html", {'data': data,'data_positive':positive_list,
-                                'data_negative':negative_list,'data_neutral':neutral_list})
+                                'data_negative':negative_list,'data_neutral':neutral_list,'input_hastag': input_hastag})
     return render(request, "index.html", {'input_hastag': user_input})
 
 

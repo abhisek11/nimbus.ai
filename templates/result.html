@@ -27,19 +27,20 @@
     <div class="row">
         
         <div class="col s4 m4 l4" >
+            <p>SearchKey : {{input_hastag}}</p>
             <div id="piechart" style="width: 463px !important;min-height: 450px;float: left !important;"></div>
         </div>
 
-        <div class="col s8 m12 l8 table-box" style="display:none" >
+        <div class="col s8 m12 l8 table-box table-pos" style="display:none" >
             <table style="width:50%" >
-                <tr>
-                    <th><strong>Post</strong></th>
-                    <th><strong>screen_name</strong></th>
-                    <th><strong>created_at</strong></th>
-                    <th><strong>user_location</strong></th>
-                    <th><strong>user_id</strong></th>
-                    
-                </tr>
+                <thead>
+                        <th><strong>Post</strong></th>
+                        <th><strong>Screen name</strong></th>
+                        <th><strong>Created at</strong></th>
+                        <th><strong>User location</strong></th>
+                        <th><strong>User id</strong></th>
+                        
+                    </thead>
                 {% for data in data_positive %}
                     <tr>
                         {% for value in data %}
@@ -50,17 +51,17 @@
                 
             </table>
         </div>
-        <!-- <div class="col s8 m12 l8 table-box" style="display:none" >
+        <div class="col s8 m12 l8 table-box table-nev" style="display:none" >
                 <table style="width:50%" >
-                    <tr>
+                    <thead>
                         <th><strong>Post</strong></th>
-                        <th><strong>screen_name</strong></th>
-                        <th><strong>created_at</strong></th>
-                        <th><strong>user_location</strong></th>
-                        <th><strong>user_id</strong></th>
+                        <th><strong>Screen name</strong></th>
+                        <th><strong>Created at</strong></th>
+                        <th><strong>User location</strong></th>
+                        <th><strong>User id</strong></th>
                         
-                    </tr>
-                    {% for data in data_positive %}
+                    </thead>
+                    {% for data in data_negative %}
                         <tr>
                             {% for value in data %}
                                 <td>{{value}}</td>
@@ -69,16 +70,58 @@
                     {% endfor %}
                     
                 </table>
-            </div> -->
+            </div>
+            <div class="col s8 m12 l8 table-box table-neu" style="display:none" >
+                <table style="width:50%" >
+                    <thead>
+                            <th><strong>Post</strong></th>
+                            <th><strong>Screen name</strong></th>
+                            <th><strong>Created at</strong></th>
+                            <th><strong>User location</strong></th>
+                            <th><strong>User id</strong></th>
+                            
+                        </thead>
+                    {% for data in data_neutral %}
+                        <tr>
+                            {% for value in data %}
+                                <td>{{value}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    
+                </table>
+            </div>
         <div class="col s12 m12 l12" >
-                <button type="button" class="btn btn-success" id="positive-result" onclick="display_data()">Positive</button>
-                <button type="button" class="btn btn-danger" id="negative-result">Negative</button>
-                <button type="button" class="btn btn-info" id="neutral-result">Neutral</button>
+                <button type="button" class="btn btn-success" id="positive-result" onclick="display_pos_data()">Positive</button>
+                <button type="button" class="btn btn-danger" id="negative-result" onclick="display_nev_data()">Negative</button>
+                <button type="button" class="btn btn-info" id="neutral-result" onclick="display_neu_data()">Neutral</button>
         </div>
+    
     </div>
+
+
     <script>
-        function display_data(){
+        $(document).ready(function(){
             $('.table-pos').show();
+        });
+        function display_pos_data(){
+            $('.table-pos').show();
+            $('.table-nev').hide();
+            $('.table-neu').hide();
+        }
+    </script>
+    <script>
+        function display_nev_data(){
+            $('.table-nev').show();
+            $('.table-pos').hide();
+            $('.table-neu').hide();
+        }
+    </script>
+    <script>
+        function display_neu_data(){
+            $('.table-neu').show();
+            $('.table-nev').hide();
+            $('.table-pos').hide();
         }
     </script>
 {% endblock %}

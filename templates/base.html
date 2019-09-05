@@ -41,14 +41,43 @@
             margin: 0px 0px;
             overflow-x: auto;
             height: 400px;
+
             /* width: 47% !important; */
             float: left !important;
             padding: 0px 12px 0px 46px !important;
       
         }
         .table-box table, th, td {
-    border: 1px solid #d4cfcf;
-    }
+            border: 1px solid #d4cfcf;
+            /* background: #b6bdbc; */
+            color:#060706;
+        }
+        .table-box td {
+                border: 1px solid #d4cfcf;
+                /* background: #b6bdbc; */
+                color: #5d655d;
+                font-size: 12px;
+            }
+
+        .table-box  thead {
+            border-bottom: 1px solid #d0d0d0;
+            background: #ccc;
+            font-size: 13px;
+            color: #000;
+        }
+        /* main{
+            background:url("{{ STATIC_URL }}/media/abg1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px dashed #333;
+        } */
+        .back-img{
+            background: url('http://192.168.28.119:8001/media/img1.svg');
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
@@ -61,13 +90,13 @@
     <meta charset="UTF-8">
     <title>Nimbus.AI</title>
 </head>
-<body>
+<body class="body-class">
 <header>
     <nav>
         <div class="nav-wrapper teal lighten-2">
             <a href="/" class="brand-logo center">Nimbus.AI</a></div></nav>
 </header>
-<main>
+<main class="back-img">
     <br>
     {% block body %}{% endblock %}
 </main>

@@ -131,6 +131,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+MEDIA_DIR=os.path.join(BASE_DIR,"media")
+BASE_URL='http://192.168.28.119:8001/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
