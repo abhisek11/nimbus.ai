@@ -37,7 +37,6 @@ eggs/
 .eggs/
 lib/
 lib64/
-twienv/
 parts/
 sdist/
 var/
@@ -102,7 +101,7 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
-
+twienv/
 # Spyder project settings
 .spyderproject
 
