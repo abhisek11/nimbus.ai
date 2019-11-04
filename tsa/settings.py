@@ -30,7 +30,7 @@ SECRET_KEY = 'g+n#bo)eelv+z-po5zl%_^!ba@j3v0x_p78^08%_1ps83%c$)t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nimbusanalytics.herokuapp.com']
 
 
 # Application definition
