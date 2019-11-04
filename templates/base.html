@@ -71,13 +71,13 @@
             background-position: center;
             border: 2px dashed #333;
         } */
-        .back-img{
+        /* .back-img{
             background: url('http://192.168.28.119:8001/media/img1.svg');
             height: 100%;
             width: 100%;
             background-position: center;
             background-repeat: no-repeat;
-        }
+        } */
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
@@ -93,18 +93,21 @@
 <body class="body-class">
 <header>
     <nav>
-        <div class="nav-wrapper teal lighten-2">
+        <div class="nav-wrapper">
             <a href="/" class="brand-logo center">Nimbus.AI</a></div></nav>
 </header>
-<main class="back-img">
-    <br>
-    {% block body %}{% endblock %}
-</main>
-<footer class="page-footer teal lighten-2" style="!important;padding-top: 0">
+<!-- <div> -->
+    <main class="back-img" >
+        <br>
+        {% block body %}{% endblock %}
+    </main>
+<!-- </div> -->
+<footer class="page-footer" style="!important;padding-top: 0">
     <div class="footer-copyright">
         <div class="container">© 2019 Copyright Abhisek Singh
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a></div>
     </div>
 </footer>
+
 </body>
 </html>
