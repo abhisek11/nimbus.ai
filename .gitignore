@@ -1,8 +1,8 @@
 
 # Created by https://www.gitignore.io/api/linux,pycharm
 
-secrets.py
-secrets.pyc
+# secrets.py
+# secrets.pyc
 
 ### Linux ###
 *~
